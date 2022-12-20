@@ -30,7 +30,7 @@ Website Gif
 - [Dimitry Andreev](https://github.com/bgandreev)
 - [Ethan Hale](https://github.com/edogtheninja)
 - [Cody Hunt](https://github.com/codyrhunt77)
-- [Salvatore Tocco](https://github.com/salvo-t)
+- [Sal Tocco](https://github.com/salvo-t)
 
 2. API Content
 
