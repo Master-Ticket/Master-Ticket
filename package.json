@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Master-Ticket/Master-Ticket/issues"
   },
-  "homepage": "https://github.com/Master-Ticket/Master-Ticket#readme"
+  "homepage": "https://github.com/Master-Ticket/Master-Ticket#readme",
+  "dependencies": {
+    "husky": "^8.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:no-watch"
+    }
+  }
 }
