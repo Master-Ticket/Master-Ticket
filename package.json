@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier --write .",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -17,12 +19,9 @@
     "url": "https://github.com/Master-Ticket/Master-Ticket/issues"
   },
   "homepage": "https://github.com/Master-Ticket/Master-Ticket#readme",
-  "dependencies": {
-    "husky": "^8.0.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test:no-watch"
-    }
+  
+  "devDependencies": {
+    "prettier": "^2.8.1",
+    "husky": "^8.0.0"
   }
 }

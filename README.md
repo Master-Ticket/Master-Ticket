@@ -18,12 +18,6 @@
 
 ## Installation
 
-
-
-
-
-
-
 ## Usage
 
 ## Mock Up
