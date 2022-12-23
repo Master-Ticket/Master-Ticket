@@ -19,15 +19,8 @@
     "url": "https://github.com/Master-Ticket/Master-Ticket/issues"
   },
   "homepage": "https://github.com/Master-Ticket/Master-Ticket#readme",
-
-
-  "dependencies": {
-    "nodemailer": "^6.8.0"
-  },
-  
   "devDependencies": {
-    "prettier": "^2.8.1",
-    "husky": "^8.0.0"
-
+    "husky": "^8.0.0",
+    "prettier": "^2.8.1"
   }
 }
