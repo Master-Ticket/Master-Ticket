@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS userEvents;
+CREATE DATABASE userEvents;
+
+USE userEvents;
+
+CREATE TABLE events (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  date,
+  descript VARCHAR(1000),
+  city VARCHAR(50) NOT NULL,
+  country VARCHAR(50) NOT NULL,
+  ON DELETE SET NULL
+
+);
+
+

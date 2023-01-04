@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/Master-Ticket/Master-Ticket/issues"
   },
-  "homepage": "https://github.com/Master-Ticket/Master-Ticket#readme"
+  "homepage": "https://github.com/Master-Ticket/Master-Ticket#readme",
+  "dependencies": {
+    "den": "^0.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "i": "^0.3.7",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.20"
+  }
 }
