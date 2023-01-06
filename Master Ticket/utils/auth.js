@@ -1,5 +1,5 @@
 const withAuth = (req, res, next) => {
-  console.log("Peanuts");
+  console.log();
   if (!req.session.loggedIn) {
     res.redirect("/login");
   } else {
