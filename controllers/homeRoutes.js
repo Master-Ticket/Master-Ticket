@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const withAuth = require("../utils/auth");
-const { fetchEvents }= require("../utils/fetchEvents")
+const { fetchEvents }= require("../services/fetchEvents")
 
 router.get("/", withAuth, async (req, res) => {
   try {
