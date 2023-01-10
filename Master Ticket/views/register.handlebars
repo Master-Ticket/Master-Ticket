@@ -1,305 +1,99 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body>
-  <div class="bg-gray-200 w-full min-h-screen flex items-center justify-center">
-    <div class="lg:flex items-center space-x-16">
-      <div
-        class="w-5/6 md:w-3/4 lg:w-2/3 xl:w-[500px] 2xl:w-[550px] mt-8 mx-auto px-16 py-8 rounded-lg"
-      >
 
-        <h2
-          class="text-center text-2xl font-bold tracking-wide text-gray-800"
-        >Sign Up</h2>
-        <p class="text-center text-sm text-gray-600 mt-2">Already have an
-          account?
-          <a
-            href="/login"
-            class="text-blue-600 hover:text-blue-700 hover:underline"
-            title="Sign In"
-          >Sign in here</a></p>
-
-        <form class="my-8 text-sm">
-          <div class="flex flex-col my-4">
-            <label for="name" class="text-gray-700">Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
-              placeholder="Enter your name"
-            />
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Master Ticket - Your One Stop Shop for Finding Local Event</title>
+  </head>
+  <body class="bg-white">
+    <header class="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
+      <div class="flex items-center justify-between">
+          <h1 class="bg-gradient-to-r from-blue-600 to-indigo-400 inline-block text-transparent bg-clip-text">
+              <a class="text-2xl" href="#">Mastr</a>
+          </h1>
+      </div>
+      <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:bg-transparent lg:dark:bg-transparent lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+          <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
+              <a class="text-black-700 lg:mx-6 dark:text-black-200 dark:hover:text-blue-400 hover:text-blue-500" href="#">Login</a>
           </div>
+          <a class="block h-10 px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border rounded-md dark:hover:bg-white-700 dark:text-blue lg:mt-0 hover:bg-white-100 lg:w-auto" href="#">
+              SIGN UP
+          </a>
+      </div>
+    </header>
+    <main class="container px-6 py-16 mx-auto">
+      <div class="max-w-lg mx-auto">
+        <div class="register-card">
+        <p class="text-xl font-semibold text-gray-800 pb-10">
+          Please fill out the information below to get started.
+        </p>
+        <form class="form-signup">
+          <div class="form-group">
 
-          <div class="flex flex-col my-4">
-            <label for="email" class="text-gray-700">Email Address</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
-              placeholder="Enter your email"
-            />
           </div>
-
-          <div class="flex flex-col my-4">
-            <label for="password" class="text-gray-700">Password</label>
-            <div
-              x-data="{ show: false }"
-              class="relative flex items-center mt-2"
-            >
-              <input
-                :type=" show ? 'text': 'password' "
-                name="password"
-                id="password"
-                class="flex-1 p-2 border pr-10 border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
-                placeholder="Enter your password"
-                type="password"
-              />
-              <button
-                @click="show = !show"
-                type="button"
-                class="absolute right-2 bg-transparent flex items-center justify-center text-gray-700"
-              >
-                <svg
-                  x-show="!show"
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
-                  ></path></svg>
-
-                <svg
-                  x-show="show"
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style="display: none;"
-                ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  ></path></svg>
-              </button>
+          <div class="form-group">
+          <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">          
+                <label class="text-black-700" for="name-signup">Name</label>
+                <input id="name-signup" type="text" class="form-input block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+              </div>
+              <div class="form-group">
+                  <label class="text-gray-700 dark:text-gray-200" for="email-signup">Email Address</label>
+                  <input id="email-signup" type="email" class="form-input block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+              </div>
+              <div class="form-group">
+                  <label class="text-gray-700 dark:text-gray-200" for="password-signup">Password</label>
+                  <input id="password-signup" type="password" class="form-input block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+              </div>
+            
+              <div class="form-group">
+          <div class="flex justify-between items-center mt-8">
+            <button class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Submit</button>
+            <p class="pl-5">
+              Already have an account? <a href="#" class="text-blue-600 underline">Login</a>
+            </p>
+          </div>
+      </form>
+      </div>
+    </main>
+      <footer>
+        <div class="container px-6 py-8 mx-auto">
+          <hr class="my-6 border-gray-200 md:my-10" />
+            <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+                <p class="text-gray-500 dark:text-gray-300">© Copyright 2021. All Rights Reserved.</p>
+                <div class="flex -mx-2">
+                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Reddit">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM6.807 10.543C6.20862 10.5433 5.67102 10.9088 5.45054 11.465C5.23006 12.0213 5.37133 12.6558 5.807 13.066C5.92217 13.1751 6.05463 13.2643 6.199 13.33C6.18644 13.4761 6.18644 13.6229 6.199 13.769C6.199 16.009 8.814 17.831 12.028 17.831C15.242 17.831 17.858 16.009 17.858 13.769C17.8696 13.6229 17.8696 13.4761 17.858 13.33C18.4649 13.0351 18.786 12.3585 18.6305 11.7019C18.475 11.0453 17.8847 10.5844 17.21 10.593H17.157C16.7988 10.6062 16.458 10.7512 16.2 11C15.0625 10.2265 13.7252 9.79927 12.35 9.77L13 6.65L15.138 7.1C15.1931 7.60706 15.621 7.99141 16.131 7.992C16.1674 7.99196 16.2038 7.98995 16.24 7.986C16.7702 7.93278 17.1655 7.47314 17.1389 6.94094C17.1122 6.40873 16.6729 5.991 16.14 5.991C16.1022 5.99191 16.0645 5.99491 16.027 6C15.71 6.03367 15.4281 6.21641 15.268 6.492L12.82 6C12.7983 5.99535 12.7762 5.993 12.754 5.993C12.6094 5.99472 12.4851 6.09583 12.454 6.237L11.706 9.71C10.3138 9.7297 8.95795 10.157 7.806 10.939C7.53601 10.6839 7.17843 10.5422 6.807 10.543ZM12.18 16.524C12.124 16.524 12.067 16.524 12.011 16.524C11.955 16.524 11.898 16.524 11.842 16.524C11.0121 16.5208 10.2054 16.2497 9.542 15.751C9.49626 15.6958 9.47445 15.6246 9.4814 15.5533C9.48834 15.482 9.52348 15.4163 9.579 15.371C9.62737 15.3318 9.68771 15.3102 9.75 15.31C9.81233 15.31 9.87275 15.3315 9.921 15.371C10.4816 15.7818 11.159 16.0022 11.854 16C11.9027 16 11.9513 16 12 16C12.059 16 12.119 16 12.178 16C12.864 16.0011 13.5329 15.7863 14.09 15.386C14.1427 15.3322 14.2147 15.302 14.29 15.302C14.3653 15.302 14.4373 15.3322 14.49 15.386C14.5985 15.4981 14.5962 15.6767 14.485 15.786V15.746C13.8213 16.2481 13.0123 16.5208 12.18 16.523V16.524ZM14.307 14.08H14.291L14.299 14.041C13.8591 14.011 13.4994 13.6789 13.4343 13.2429C13.3691 12.8068 13.6162 12.3842 14.028 12.2269C14.4399 12.0697 14.9058 12.2202 15.1478 12.5887C15.3899 12.9572 15.3429 13.4445 15.035 13.76C14.856 13.9554 14.6059 14.0707 14.341 14.08H14.306H14.307ZM9.67 14C9.11772 14 8.67 13.5523 8.67 13C8.67 12.4477 9.11772 12 9.67 12C10.2223 12 10.67 12.4477 10.67 13C10.67 13.5523 10.2223 14 9.67 14Z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Facebook">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.00195 12.002C2.00312 16.9214 5.58036 21.1101 10.439 21.881V14.892H7.90195V12.002H10.442V9.80204C10.3284 8.75958 10.6845 7.72064 11.4136 6.96698C12.1427 6.21332 13.1693 5.82306 14.215 5.90204C14.9655 5.91417 15.7141 5.98101 16.455 6.10205V8.56104H15.191C14.7558 8.50405 14.3183 8.64777 14.0017 8.95171C13.6851 9.25566 13.5237 9.68693 13.563 10.124V12.002H16.334L15.891 14.893H13.563V21.881C18.8174 21.0506 22.502 16.2518 21.9475 10.9611C21.3929 5.67041 16.7932 1.73997 11.4808 2.01722C6.16831 2.29447 2.0028 6.68235 2.00195 12.002Z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Github">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
             </div>
-          </div>
-
-          <div class="flex flex-col my-4">
-            <label for="password_confirmation" class="text-gray-700">Password
-              Confirmation</label>
-            <div
-              x-data="{ show: false }"
-              class="relative flex items-center mt-2"
-            >
-              <input
-                :type=" show ? 'text': 'password' "
-                name="password_confirmation"
-                id="password_confirmation"
-                class="flex-1 p-2 pr-10 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
-                placeholder="Enter your password again"
-                type="password"
-              />
-              <button
-                @click="show = !show"
-                type="button"
-                class="absolute right-2 bg-transparent flex items-center justify-center text-gray-700"
-              >
-                <svg
-                  x-show="!show"
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
-                  ></path></svg>
-
-                <svg
-                  x-show="show"
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style="display: none;"
-                ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  ></path></svg>
-              </button>
-            </div>
-          </div>
-
-          <div class="my-4 flex items-center justify-end space-x-4">
-            <button
-              class="bg-blue-600 hover:bg-blue-700 rounded-lg px-8 py-2 text-gray-100 hover:shadow-xl transition duration-150 uppercase"
-            >Sign Up</button>
-          </div>
-        </form>
-      </div>
-      <div class="flex items-center justify-center">
-        <svg
-          class="text-blue-600 w-5/6"
-          style="transform: scale(-1,1);"
-          xmlns="http://www.w3.org/2000/svg"
-          data-name="Layer 1"
-          width="582.544228"
-          height="350.249375"
-          viewBox="0 0 832.20604 500.35625"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        ><path
-            d="M227.31663,699.06c-.05567-.24512-5.44-24.79785,5.55615-45.19043,10.99609-20.39166,34.46826-29.38477,34.7041-29.47363l1.07275-.40235.25342,1.11817c.05566.24511,5.43994,24.79785-5.55615,45.19043-10.99561,20.39166-34.46826,29.38476-34.7041,29.47363l-1.07325.40234Zm39.86181-72.33783c-4.70166,2.02246-23.25781,10.874-32.54492,28.09668-9.28809,17.22461-6.48584,37.59375-5.59229,42.63086,4.69971-2.01758,23.24854-10.85547,32.54493-28.09668C270.87375,652.1293,268.07248,631.76211,267.17844,626.72213Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#f1f1f1"
-          ></path><path
-            d="M254.94373,663.14907c-19.76056,11.88861-27.371,35.50269-27.371,35.50269s24.42779,4.3388,44.18835-7.54981,27.371-35.50268,27.371-35.50268S274.70429,651.26046,254.94373,663.14907Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#f1f1f1"
-          ></path><path
-            d="M554.19262,472.56441a10.83726,10.83726,0,0,0-10.47951-12.89681l-9.15082-23.01244-15.3409,2.15012,13.37918,32.31652a10.896,10.896,0,0,0,21.59205,1.44261Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#9f616a"
-          ></path><path
-            d="M525.92964,464.47855l-4.75346-11.3351-29.62149-56.38484,1.61062-104.33228.30923-.041c18.954-2.50423,31.77818,84.82857,32.315,88.54784l18.71553,64.00809,4.45518,14.10849Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="currentColor"
-          ></path><polygon
-            points="296.518 484.658 310.92 484.657 317.771 429.106 296.515 429.107 296.518 484.658"
-            fill="#9f616a"
-          ></polygon><path
-            d="M476.741,679.77772l28.363-.00114h.00115a18.07611,18.07611,0,0,1,18.07514,18.07485v.58737l-46.43846.00172Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#2f2e41"
-          ></path><polygon
-            points="164.095 462.715 175.912 470.949 213.294 429.291 195.854 417.138 164.095 462.715"
-            fill="#9f616a"
-          ></polygon><path
-            d="M347.66667,656.57887l23.27053,16.21554.00094.00065a18.07611,18.07611,0,0,1,4.49515,25.16356l-.33583.4819L336.997,671.89089Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#2f2e41"
-          ></path><path
-            d="M472.49955,671.42229l-.62235-104.21007L462.81533,501.686,445.9204,559.31028l-.03285.04733-61.225,88.88515-23.82325-12.07048.13051-.31012c1.45591-3.46284,35.76216-84.7936,44.98333-84.7936a4.97985,4.97985,0,0,0,4.24236-1.86422c2.70645-3.614.50244-11.28284.47983-11.35983-2.63969-10.94588,3.99742-14.67362,5.3193-15.296l3.55555-73.397.36857.02543,96.38955,6.76108-4.04386,91.76589-8.69878,120.23153-.29881.03391Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#2f2e41"
-          ></path><path
-            d="M517.781,472.20177l-.41678-.03391L413.69966,463.8117l.25589-34.29989,5.07382-89.55836.02878-.06216,20.66277-44.85865,14.6473-6.63252,21.37023-1.12461.0521.01307,19.50283,4.83187,20.288,145.63873Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="currentColor"
-          ></path><circle
-            cx="465.99537"
-            cy="251.83011"
-            r="27.29373"
-            transform="translate(-247.58414 54.55847) rotate(-28.66324)"
-            fill="#9f616a"
-          ></circle><path
-            d="M438.54633,258.68144v-10.6343s-8.576-10.10035.85759-12.64464c0,0,2.57278-25.44285,24.87023-13.56952,0,0,30.87339-5.08857,27.443,12.72143,0,0,7.71835-4.64962,5.14556,7.22372L491.88689,260.904s2.40306-12.634-5.31529-14.33024l-4.288-2.54429s-12.00632,11.87334-30.0158-2.54428c0,0-7.71834-1.84217-6.86075,5.79069S438.54633,258.68144,438.54633,258.68144Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#2f2e41"
-          ></path><path
-            d="M463.15358,446.58748a10.83729,10.83729,0,0,0-12.62376-10.80688l-13.13193-20.99672-14.706,4.86818,18.96129,29.391a10.896,10.896,0,0,0,21.50042-2.45556Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#9f616a"
-          ></path><path
-            d="M429.23633,439.96884l-23.75756-48.2346.021-.11726c.09572-.53405,9.659-53.63372,16.97316-73.15156,7.36048-19.64146,17.43552-23.585,17.86078-23.74325l.21263-.07912,9.03379,8.66522-12.51394,83.527,13.489,40.28392Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="currentColor"
-          ></path><rect
-            x="786.20604"
-            width="46"
-            height="46"
-            fill="#f1f1f1"
-          ></rect><rect
-            x="426.20604"
-            y="179"
-            width="46"
-            height="46"
-            fill="#f1f1f1"
-          ></rect><path
-            d="M635.92184,404.66451H999.59653V220.55582H635.92184Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#fff"
-          ></path><path
-            d="M1002.59656,407.66458H632.92176V217.5557h369.6748Zm-363.6748-6h357.6748V223.5557H638.92176Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#e5e5e5"
-          ></path><rect
-            x="495.67778"
-            y="85.31585"
-            width="279.80647"
-            height="9.27916"
-            fill="#e5e5e5"
-          ></rect><rect
-            x="495.67778"
-            y="107.81893"
-            width="279.80647"
-            height="9.27916"
-            fill="#e5e5e5"
-          ></rect><rect
-            x="723.48425"
-            y="141.04542"
-            width="52"
-            height="8.05267"
-            fill="currentColor"
-          ></rect><path
-            d="M565.897,700.13773h-381a1,1,0,1,1,0-2h381a1,1,0,0,1,0,2Z"
-            transform="translate(-183.89698 -199.82188)"
-            fill="#cbcbcb"
-          ></path></svg>
-      </div>
-    </div>
-  </div>
-</body>
-{{! <div class="bg-blue-500">
-  <div class="">
-    <h2 class="">Create Account</h2>
-    <form class="">
-      <div class="">
-
-      </div>
-      <div class="">
-        <label for="email-signup">Email:</label>
-        <input class="" type="text" id="email-signup" />
-      </div>
-      <div class="">
-        <label for="password-signup">Password:</label>
-        <input class="" type="password" id="password-signup" />
-      </div>
-      <div class="">
-        <button class="" type="submit">Create Account</button>
-      </div>
-    </form>
-  </div>
-</div> }}
-
-<script src="/js/login.js"></script>
-<script src="/js/createAccount.js"></script>
+        </div>
+    </footer>
+    <script src="/js/createAccount.js"></script>
+   
+     
+  </body>
+  
+</html>
