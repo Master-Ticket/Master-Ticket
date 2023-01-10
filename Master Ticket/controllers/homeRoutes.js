@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const withAuth = require("../utils/auth");
+const { fetchEvents }= require("../utils/fetchEvents")
+
 router.get("/", withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -27,4 +29,12 @@ router.get("/login", async (req, res) => {
 router.get("/register", async (req, res) => {
   res.render("register");
 });
+
+router.get("/search", async (req, res) => {
+  console.log(req.query)
+  const events = await fetchEvents(req.query.postalCode, '', '50mi');
+  console.log(events);
+  res.render("search", {events});
+});
+
 module.exports = router;
