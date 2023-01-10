@@ -1,0 +1,47 @@
+
+<div class="flex flex-col">
+    <div class="flex justify-center h-10">
+    <input type="text" id="search" class="px-5 box-content border border-black-900 w-96 mx-10" placeholder="Please input your zip code">
+    <button class="w-48 block px-2 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border rounded-md dark:hover:bg-gray-700 " id="searchButton">Search</button>
+    </div>
+<br><br>
+    {{!-- <div class="search">
+    <ul>
+        {{#each events}}
+        <li>
+                {{eventTitle}} --- {{datetime}} --- {{eventVenue.name}} --- {{eventVenue.address2}}
+        </li> 
+        {{/each}}
+    </ul>
+    </div> --}}
+
+</div>
+
+{{#each events}}
+<div class="flex justify-center my-10">
+  <div class="rounded-lg shadow-lg bg-white max-w-sm">
+    <a href="#!">
+      <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+    </a>
+    <div class="p-6">
+      <h5 class="text-gray-900 text-xl font-medium mb-5">{{eventTitle}}</h5>
+      <p class="text-gray-700 text-base">
+        <strong>When:</strong>  {{datetime}}
+      </p>
+      <p class="mt-2 mb-5"><strong>Where:</strong>  {{eventVenue.name}} - {{eventVenue.address2}}</p>
+      <p class="text-gray-700 text-base mb-10">
+        <strong>Average Ticket Prices:</strong></strong> ${{startingPrice}}.00
+      </p>
+      
+    <a class="block h-10 px-5 py-2 mt-10 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border rounded-md dark:hover:bg-gray-700 dark:text-white lg:mt-0 hover:bg-gray-100 lg:w-auto" href="{{eventUrl}}">
+              Buy Tickets
+          </a>
+
+    </div>
+  </div>
+</div>
+{{/each}}
+
+
+
+<script src="./js/search.js"></script>
