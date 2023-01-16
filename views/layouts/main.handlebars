@@ -5,26 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Master Ticket - Your One Stop Shop for Finding Local Event</title>
+    <style> body{background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts1/12virus-concerts1-videoSixteenByNineJumbo1600-v2.jpg); } </style>
+    <title>MasterTicket</title>
   </head>
 
   <body class="bg-white">
+    <div class="bg-slate-400">
     <header class="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
       <div class="flex items-center justify-between">
           <h1 class="bg-gradient-to-r from-blue-600 to-indigo-400 inline-block text-transparent bg-clip-text">
               <a class="text-2xl" href="#">Mastr</a>
           </h1>
       </div>
+      <div>
+        <h1 class="font-bold text-3xl font-ui-monospace ">Master Ticket - Your One Stop Shop for Finding Local Event</h1>
+      </div>
 
-      <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:bg-transparent lg:dark:bg-transparent lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
-          <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
-              <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500" href="/login">Login</a>
+      <div x-cloak :class=" [isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:bg-transparent lg:dark:bg-transparent lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+          <div class="pr-4">
+          <div class="btn btn-primary py-2 px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+              <a href="/login">Login</a>
           </div>
-
-          <a class="block h-10 px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border rounded-md dark:hover:bg-gray-700 dark:text-white lg:mt-0 hover:bg-gray-100 lg:w-auto" href="/register">
+          </div>
+          <a class="btn btn-primary py-2 px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" href="/register">
               SIGN UP
           </a>
       </div>
+    </div>
     </header>
   
     <main class="container px-6 py-16 mx-auto">
@@ -68,8 +75,8 @@
     </main>
 
       <footer>
-        <div class="container px-6 py-8 mx-auto">
-          <hr class="my-6 border-gray-200 md:my-10" />
+        <div class="container px-6 py-8 mx-auto bg-slate-400 pb-0 py-0">
+          <hr class="my-6 border-black-200 md:my-10" />
             <div class="flex flex-col items-center sm:flex-row sm:justify-between">
                 <p class="text-gray-500 dark:text-gray-300">© Copyright 2021. All Rights Reserved.</p>
     
